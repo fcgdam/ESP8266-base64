@@ -6,7 +6,7 @@ The original code is from this github repository: https://github.com/AxisCommuni
 
 ## API:
 
-There two functions: one for encode and one for decode:
+There are two functions: one for encode and one for decode:
 
  int encoded_lenght = base64_encode( char *data_out, char *data_in, int data_in_lenght );
 
