@@ -17,7 +17,7 @@ There are two functions: one for encode and one for decode:
 
  I've used the Sming framework for the ESP8266, but the code should be portable to other architectures and frameworks:
 
-###Encoding:
+### Encoding:
     char b64data[256];   // Size is just an example.
     String s = "Hello world!";
     Serial.println(" Message: " );
@@ -29,7 +29,7 @@ There are two functions: one for encode and one for decode:
     Serial.println ("The lenght is: " + String(b64len) );
 
 
-###Decoding:
+### Decoding:
     char decoded[256];
     String ss(b64data);
     base64_decode( decoded , (char *)ss.c_str() , ss.length() );
