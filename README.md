@@ -8,9 +8,9 @@ The original code is from this github repository: https://github.com/AxisCommuni
 
 There are two functions: one for encode and one for decode:
 
- int encoded_lenght = base64_encode( char *data_out, char *data_in, int data_in_lenght );
+ int encoded_lenght = b64_encode( char *data_out, char *data_in, int data_in_lenght );
 
- int decoded_lenght = base64_decode( char *data_out, char *data_in, int data_in_lenght );
+ int decoded_lenght = b64_decode( char *data_out, char *data_in, int data_in_lenght );
 
 
 ## How to use:
@@ -24,7 +24,7 @@ There are two functions: one for encode and one for decode:
     Serial.println( s) ;    
     
     Serial.println(" Encoded message:");
-    int b64len = base64_encode(b64data, (char *)s.c_str(),s.length());
+    int b64len = b64_encode(b64data, (char *)s.c_str(),s.length());
     Serial.println ( String(b64data) );
     Serial.println ("The lenght is: " + String(b64len) );
 
@@ -32,10 +32,10 @@ There are two functions: one for encode and one for decode:
 ### Decoding:
     char decoded[256];
     String ss(b64data);
-    base64_decode( decoded , (char *)ss.c_str() , ss.length() );
+    b64_decode( decoded , (char *)ss.c_str() , ss.length() );
     Serial.println("Decoded: " + String(decoded));
 
  or
 
-    base64_decode( decodec, b64data, b64len);
+    b64_decode( decodec, b64data, b64len);
     Serial.println("Decoded: " + String(decoded));

@@ -9,7 +9,7 @@ inline void a3_to_a4(unsigned char * a4, unsigned char * a3);
 inline void a4_to_a3(unsigned char * a3, unsigned char * a4);
 inline unsigned char b64_lookup(char c);
 
-int base64_encode(char *output, char *input, int inputLen) {
+int b64_encode(char *output, char *input, int inputLen) {
 	int i = 0, j = 0;
 	int encLen = 0;
 	unsigned char a3[3];
@@ -47,7 +47,7 @@ int base64_encode(char *output, char *input, int inputLen) {
 }
 
 
-int base64_decode(char *output, char *input, int inputLen) {
+int b64_decode(char *output, char *input, int inputLen) {
 	int i = 0, j = 0;
 	int decLen = 0;
 	unsigned char a3[3];
@@ -93,12 +93,12 @@ int base64_decode(char *output, char *input, int inputLen) {
 	return decLen;
 }
 
-int base64_enc_len(int plainLen) {
+int b64_enc_len(int plainLen) {
 	int n = plainLen;
 	return (n + 2 - ((n + 2) % 3)) / 3 * 4;
 }
 
-int base64_dec_len(char * input, int inputLen) {
+int b64_dec_len(char * input, int inputLen) {
 	int i = 0;
 	int numEq = 0;
 	for(i = inputLen - 1; input[i] == '='; i--) {
